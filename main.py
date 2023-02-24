@@ -2,7 +2,7 @@ from typing import NamedTuple, List
 import csv
 import random
 
-####################
+#############################
 # Data Definitions
 
 Anime = NamedTuple('Anime', [('name', str),
@@ -48,6 +48,9 @@ def fn_for_loa(loa: List[Anime]) -> ...:
 
     return ...(acc)
 
+##############################
+# Reading from anime.csv
+
 def read(filename: str) -> List[Anime]:
     """
     reads information from a specified file and returns a list of anime,
@@ -85,7 +88,8 @@ def string_to_float(s: str) -> float:
     else:
         return float(s)
 
-COMMON_GENRES = ['Action', 'Adventure', 'Comedy', 'Shounen', 'Romance', 'Fantasy', 'Drama']
+################################
+# Data analysis functions
 
 def give_anime(filename: str, genre: str, min_rating: float, anime_type: str) -> str:
     """
@@ -209,6 +213,9 @@ def only_anime_names(loa: List[Anime]) -> List[str]:
         anime_names.append(a.name)
 
     return anime_names
+
+##################################
+# Console-based UI
 
 x = input("What genre of anime do you want to watch? ")
 y = input("What should the minimum rating of the anime be? (out of 10) ")
