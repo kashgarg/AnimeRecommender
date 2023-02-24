@@ -1,11 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[25]:
-
-
 from typing import NamedTuple, List
 import csv
+import random
 
 ####################
 # Data Definitions
@@ -53,10 +48,6 @@ def fn_for_loa(loa: List[Anime]) -> ...:
 
     return ...(acc)
 
-
-# In[26]:
-
-
 def read(filename: str) -> List[Anime]:
     """
     reads information from a specified file and returns a list of anime,
@@ -94,11 +85,6 @@ def string_to_float(s: str) -> float:
     else:
         return float(s)
 
-
-# In[27]:
-
-
-import random
 COMMON_GENRES = ['Action', 'Adventure', 'Comedy', 'Shounen', 'Romance', 'Fantasy', 'Drama']
 
 def give_anime(filename: str, genre: str, min_rating: float, anime_type: str) -> str:
@@ -224,25 +210,8 @@ def only_anime_names(loa: List[Anime]) -> List[str]:
 
     return anime_names
 
-
-# In[38]:
-
-
-give_anime("anime.csv", "Adventure", 7.2, "Movie")
-
-
-# In[39]:
-
-
 x = input("What genre of anime do you want to watch? ")
 y = input("What should the minimum rating of the anime be? (out of 10) ")
 z = input("Do you want to watch a TV show or a movie? Enter 'TV' for a TV show, or 'Movie' for a movie: ")
 result = give_anime("anime.csv", x, float(y), z)
 print(result)
-
-
-# In[ ]:
-
-
-
-
